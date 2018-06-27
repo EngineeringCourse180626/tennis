@@ -85,6 +85,13 @@ public class TennisTest {
         assertScoreEquals("Joseph Win");
     }
 
+    @Test
+    public void first_player_win_without_deuce() {
+        givenFirstPlayerScore(4);
+
+        assertScoreEquals("Joey Win");
+    }
+
     private void givenDeuce() {
         givenFirstPlayerScore(3);
         givenSecondPlayerScore(3);
