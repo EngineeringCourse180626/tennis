@@ -56,19 +56,22 @@ public class TennisTest {
 
     @Test
     public void deuce() {
-        givenSecondPlayerScore(3);
-        givenFirstPlayerScore(3);
+        givenDeuce();
 
         assertScoreEquals("Deuce");
     }
 
     @Test
     public void first_player_adv() {
-        givenFirstPlayerScore(3);
-        givenSecondPlayerScore(3);
+        givenDeuce();
         givenFirstPlayerScore(1);
 
         assertScoreEquals("Joey Adv");
+    }
+
+    private void givenDeuce() {
+        givenFirstPlayerScore(3);
+        givenSecondPlayerScore(3);
     }
 
     private void givenFirstPlayerScore(int score) {
