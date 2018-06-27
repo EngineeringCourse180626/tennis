@@ -6,7 +6,10 @@ public class Tennis {
 
     public String score() {
         if (isSameScore())
-            return scoreLookup[firstPlayerScore] + " All";
+            if (firstPlayerScore >= 3)
+                return "Deuce";
+            else
+                return scoreLookup[firstPlayerScore] + " All";
 
         return scoreLookup[firstPlayerScore] + " " + scoreLookup[secondPlayerScore];
     }

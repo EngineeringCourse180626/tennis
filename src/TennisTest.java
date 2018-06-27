@@ -54,6 +54,14 @@ public class TennisTest {
         assertScoreEquals("Fifteen All");
     }
 
+    @Test
+    public void deuce() {
+        givenSecondPlayerScore(3);
+        givenFirstPlayerScore(3);
+
+        assertScoreEquals("Deuce");
+    }
+
     private void givenFirstPlayerScore(int score) {
         for (int index = 0; index < score; index++)
             tennis.firstPlayerScore();
