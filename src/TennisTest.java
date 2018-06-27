@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 public class TennisTest {
 
-    Tennis tennis = new Tennis();
+    Tennis tennis = new Tennis("Joey");
 
     @Test
     public void love_all() {
@@ -60,6 +60,15 @@ public class TennisTest {
         givenFirstPlayerScore(3);
 
         assertScoreEquals("Deuce");
+    }
+
+    @Test
+    public void first_player_adv() {
+        givenFirstPlayerScore(3);
+        givenSecondPlayerScore(3);
+        givenFirstPlayerScore(1);
+
+        assertScoreEquals("Joey Adv");
     }
 
     private void givenFirstPlayerScore(int score) {
