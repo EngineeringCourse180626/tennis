@@ -4,10 +4,14 @@ import static org.junit.Assert.assertEquals;
 
 public class TennisTest {
 
+    Tennis tennis = new Tennis();
+
     @Test
     public void love_all() {
-        Tennis tennis = new Tennis();
+        assertScoreEquals("Love All");
+    }
 
-        assertEquals("Love All", tennis.score());
+    private void assertScoreEquals(String expected) {
+        assertEquals(expected, tennis.score());
     }
 }
