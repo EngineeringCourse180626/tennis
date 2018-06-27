@@ -21,6 +21,8 @@ public class Tennis {
         if (isGamePoint())
             if (isAdvantage())
                 return advantagerName() + " Adv";
+            else
+                return advantagerName() + " Win";
 
         return scoreLookup[firstPlayerScore] + " " + scoreLookup[secondPlayerScore];
     }
