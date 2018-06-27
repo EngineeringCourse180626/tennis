@@ -6,6 +6,7 @@ public class Tennis {
     private HashMap<Integer, String> scoreLookup = new HashMap<Integer, String>() {{
         put(1, "Fifteen");
         put(2, "Thirty");
+        put(3, "Forty");
     }};
 
     public String score() {
