@@ -1,21 +1,14 @@
-import java.util.HashMap;
-
 public class Tennis {
     private int firstPlayerScore;
     private int secondPlayerScore;
 
-    private HashMap<Integer, String> scoreLookup = new HashMap<Integer, String>() {{
-        put(0, "Love");
-        put(1, "Fifteen");
-        put(2, "Thirty");
-        put(3, "Forty");
-    }};
+    private String[] scoreLookup = {"Love", "Fifteen", "Thirty", "Forty"};
 
     public String score() {
         if (isSameScore())
             return "Love All";
 
-        return scoreLookup.get(firstPlayerScore) + " " + scoreLookup.get(secondPlayerScore);
+        return scoreLookup[firstPlayerScore] + " " + scoreLookup[secondPlayerScore];
     }
 
     private boolean isSameScore() {
