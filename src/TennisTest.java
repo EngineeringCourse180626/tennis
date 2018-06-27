@@ -11,6 +11,13 @@ public class TennisTest {
         assertScoreEquals("Love All");
     }
 
+    @Test
+    public void fifteen_love() {
+        tennis.firstPlayerScore();
+
+        assertScoreEquals("Fifteen Love");
+    }
+
     private void assertScoreEquals(String expected) {
         assertEquals(expected, tennis.score());
     }
