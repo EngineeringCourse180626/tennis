@@ -41,15 +41,27 @@ public class TennisTest {
 
     @Test
     public void love_thirty() {
-        tennis.secondPlayerScore();
-        tennis.secondPlayerScore();
+        givenSecondPlayerScore(2);
 
         assertScoreEquals("Love Thirty");
+    }
+
+    @Test
+    public void fifteen_all() {
+        tennis.firstPlayerScore();
+        tennis.secondPlayerScore();
+
+        assertScoreEquals("Fifteen All");
     }
 
     private void givenFirstPlayerScore(int score) {
         for (int index = 0; index < score; index++)
             tennis.firstPlayerScore();
+    }
+
+    private void givenSecondPlayerScore(int score) {
+        for (int index = 0; index < score; index++)
+            tennis.secondPlayerScore();
     }
 
     private void assertScoreEquals(String expected) {

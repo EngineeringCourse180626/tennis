@@ -5,6 +5,9 @@ public class Tennis {
     private String[] scoreLookup = {"Love", "Fifteen", "Thirty", "Forty"};
 
     public String score() {
+        if (firstPlayerScore == 1 && secondPlayerScore == 1)
+            return "Fifteen All";
+
         if (isSameScore())
             return "Love All";
 
