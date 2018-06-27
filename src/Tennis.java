@@ -12,18 +12,28 @@ public class Tennis {
     }
 
     public String score() {
-        if (isSameScore())
-            if (firstPlayerScore >= 3)
-                return "Deuce";
-            else
-                return scoreLookup[firstPlayerScore] + " All";
+        return isSameScore()
+                ? isDeuce() ? deuceScore() : sameScore()
+                : isGamePoint() ? advScore() : lookupScore();
+    }
 
-        if (isGamePoint())
-            if (isAdvantage())
-                return advantagerName() + " Adv";
-            else
-                return advantagerName() + " Win";
+    private String advScore() {
+        return advantagerName() + (isAdvantage() ? " Adv" : " Win");
+    }
 
+    private String sameScore() {
+        return scoreLookup[firstPlayerScore] + " All";
+    }
+
+    private String deuceScore() {
+        return "Deuce";
+    }
+
+    private boolean isDeuce() {
+        return firstPlayerScore >= 3;
+    }
+
+    private String lookupScore() {
         return scoreLookup[firstPlayerScore] + " " + scoreLookup[secondPlayerScore];
     }
 
