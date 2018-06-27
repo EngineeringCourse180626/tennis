@@ -5,22 +5,21 @@ public class Tennis {
     private int secondPlayerScore;
 
     private HashMap<Integer, String> scoreLookup = new HashMap<Integer, String>() {{
+        put(0, "Love");
         put(1, "Fifteen");
         put(2, "Thirty");
         put(3, "Forty");
     }};
 
     public String score() {
-        if (secondPlayerScore == 2)
-            return "Love Thirty";
+        if (isSameScore())
+            return "Love All";
 
-        if (secondPlayerScore == 1)
-            return "Love Fifteen";
+        return scoreLookup.get(firstPlayerScore) + " " + scoreLookup.get(secondPlayerScore);
+    }
 
-        if (firstPlayerScore > 0)
-            return scoreLookup.get(firstPlayerScore) + " Love";
-
-        return "Love All";
+    private boolean isSameScore() {
+        return firstPlayerScore == 0 && secondPlayerScore == 0;
     }
 
     public void firstPlayerScore() {
