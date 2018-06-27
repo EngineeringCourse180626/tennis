@@ -18,13 +18,23 @@ public class Tennis {
             else
                 return scoreLookup[firstPlayerScore] + " All";
 
-        if (secondPlayerScore > 3 && secondPlayerScore - firstPlayerScore == 1)
-            return secondPlayerName + " Adv";
-
-        if (firstPlayerScore > 3 && firstPlayerScore - secondPlayerScore == 1)
-            return firstPlayerName + " Adv";
+        if (isGamePoint())
+            if (isAdvantage())
+                return advantagerName() + " Adv";
 
         return scoreLookup[firstPlayerScore] + " " + scoreLookup[secondPlayerScore];
+    }
+
+    private boolean isGamePoint() {
+        return firstPlayerScore > 3 || secondPlayerScore > 3;
+    }
+
+    private boolean isAdvantage() {
+        return Math.abs(firstPlayerScore - secondPlayerScore) == 1;
+    }
+
+    private String advantagerName() {
+        return firstPlayerScore > secondPlayerScore ? firstPlayerName : secondPlayerName;
     }
 
     private boolean isSameScore() {
