@@ -1,12 +1,14 @@
 public class Tennis {
     private final String firstPlayerName;
+    private final String secondPlayerName;
     private int firstPlayerScore;
     private int secondPlayerScore;
 
     private String[] scoreLookup = {"Love", "Fifteen", "Thirty", "Forty"};
 
-    public Tennis(String firstPlayerName) {
+    public Tennis(String firstPlayerName, String secondPlayerName) {
         this.firstPlayerName = firstPlayerName;
+        this.secondPlayerName = secondPlayerName;
     }
 
     public String score() {
@@ -15,6 +17,9 @@ public class Tennis {
                 return "Deuce";
             else
                 return scoreLookup[firstPlayerScore] + " All";
+
+        if (secondPlayerScore > 3 && secondPlayerScore - firstPlayerScore == 1)
+            return secondPlayerName + " Adv";
 
         if (firstPlayerScore > 3 && firstPlayerScore - secondPlayerScore == 1)
             return firstPlayerName + " Adv";
