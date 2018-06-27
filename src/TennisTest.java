@@ -20,10 +20,14 @@ public class TennisTest {
 
     @Test
     public void thirty_love() {
-        tennis.firstPlayerScore();
-        tennis.firstPlayerScore();
+        givenFirstPlayerScore(2);
 
         assertScoreEquals("Thirty Love");
+    }
+
+    private void givenFirstPlayerScore(int score) {
+        for (int index = 0; index < score; index++)
+            tennis.firstPlayerScore();
     }
 
     private void assertScoreEquals(String expected) {
