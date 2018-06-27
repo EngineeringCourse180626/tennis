@@ -18,6 +18,14 @@ public class TennisTest {
         assertScoreEquals("Fifteen Love");
     }
 
+    @Test
+    public void thirty_love() {
+        tennis.firstPlayerScore();
+        tennis.firstPlayerScore();
+
+        assertScoreEquals("Thirty Love");
+    }
+
     private void assertScoreEquals(String expected) {
         assertEquals(expected, tennis.score());
     }
